@@ -1,1 +1,3 @@
+#importation
+from kandinsky import *
 
