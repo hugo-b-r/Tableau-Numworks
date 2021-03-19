@@ -35,7 +35,7 @@ def txt():
     xt = xt + 64
     yt = yt + 1
 
-def reload():
+def sel():
   fill_rect(xsel,ysel,63,21,color(220,220,220))
       
 def quadrillage():
@@ -51,33 +51,33 @@ quadrillage()
 
 xsel = 65
 ysel = 23
-reload()
+sel()
 
 while True:
   if keydown(KEY_DOWN):
     if ysel != 199:
       white()
       ysel = ysel + 22
-      reload()
+      sel()
       sleep(0.1)
       
   if keydown(KEY_UP):
     if ysel != 23:
       white()
       ysel = ysel - 22
-      reload()
+      sel()
       sleep(0.1)
   
   if keydown(KEY_LEFT):
     if xsel != 65:
       white()
       xsel = xsel - 64
-      reload()
+      sel()
       sleep(0.15)
   
   if keydown(KEY_RIGHT):
     if xsel != 257:
       white()
       xsel = xsel + 64
-      reload()
+      sel()
       sleep(0.15)
