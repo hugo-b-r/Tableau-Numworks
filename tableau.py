@@ -49,7 +49,7 @@ def quadrillage():
 def x_case_vers_x_sur_l_ecran(x):
   return x*64+1
 
-def y_case_vers_x_sur_l_ecran(y):
+def y_case_vers_y_sur_l_ecran(y):
   return y*22+1
 
 
@@ -61,7 +61,7 @@ class Selecteur():
   def __init__(self, x, y, color):
     self.x = x
     self.y = y
-    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_x_sur_l_ecran(self.y),63,21,color(225,225,225))
+    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(225,225,225))
     print("selecteur créé")
 
   #on definit la recuperation des coordonnées.
@@ -73,10 +73,10 @@ class Selecteur():
 
   #on definit la sélection puis la déselection
   def selectionner():
-    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_x_sur_l_ecran(self.y),63,21,color(220,220,220))
+    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(220,220,220))
 
   def effacer_la_selection():
-    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_x_sur_l_ecran(self.y),63,21,color(255,255,255))  
+    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(255,255,255))  
 
 
 
