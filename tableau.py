@@ -91,7 +91,16 @@ quadrillage()
 #on crée le selecteur
 selecteur = Selecteur(1, 1)
 
+#on crée les listes pour chaque colonne
+colonne1 = []
+colonne2 = []
+colonne3 = []
+colonne4 = []
 
+
+
+
+#boucle principale
 while True:
   #on teste les touches de navigation
   if keydown(KEY_DOWN):#↓
@@ -124,5 +133,16 @@ while True:
 
   elif keydown(KEY_ONE):
     #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
-  
+    if selecteur.get_x == 1:
+      colonne1[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + "1"
+
+    elif selecteur.get_x == 2:
+       colonne2[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + "1"
+
+    elif selecteur.get_x == 3:
+       colonne3[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + "1"
+
+    elif selecteur.get_x == 4:
+       colonne4[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + "1"
+      
   draw_string(str(selecteur.x)+";"+str(selecteur.y),2,2)
