@@ -54,28 +54,28 @@ ysel = 23
 sel()
 
 while True:
-  if keydown(KEY_DOWN):
+  if keydown(KEY_DOWN):#↓
     if ysel != 199:
       white()
       ysel = ysel + 22
       sel()
       sleep(0.1)
       
-  if keydown(KEY_UP):
+  if keydown(KEY_UP):#↑
     if ysel != 23:
       white()
       ysel = ysel - 22
       sel()
       sleep(0.1)
   
-  if keydown(KEY_LEFT):
+  if keydown(KEY_LEFT):#←
     if xsel != 65:
       white()
       xsel = xsel - 64
       sel()
       sleep(0.15)
   
-  if keydown(KEY_RIGHT):
+  if keydown(KEY_RIGHT):#→
     if xsel != 257:
       white()
       xsel = xsel + 64
