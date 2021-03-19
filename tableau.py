@@ -58,24 +58,24 @@ def y_case_vers_y_sur_l_ecran(y):
 #on cree une classe "sélecteur"
 class Selecteur():
   #on definit l'initialisation
-  def __init__(self, x, y, color):
+  def __init__(self,x,y):
     self.x = x
     self.y = y
     fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(225,225,225))
     print("selecteur créé")
 
   #on definit la recuperation des coordonnées.
-  def get_x():
+  def get_x(self):
     return self.x
   
-  def get_y():
+  def get_y(self):
     return self.y
 
   #on definit la sélection puis la déselection
-  def selectionner():
+  def selectionner(self):
     fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(220,220,220))
 
-  def effacer_la_selection():
+  def effacer_la_selection(self):
     fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(255,255,255))  
 
 
@@ -95,34 +95,34 @@ selecteur = Selecteur(1, 1)
 while True:
   #on teste les touches de navigation
   if keydown(KEY_DOWN):#↓
-    if selecteur.get_y != 9:
+    if selecteur.y != 9:
       selecteur.effacer_la_selection()
-      selecteur.get_y = selecteur.get_y + 1
+      selecteur.y = selecteur.y + 1
       selecteur.selectionner()
       sleep(0.1)
       
   elif keydown(KEY_UP):#↑
-    if selecteur.get_y != 1:
+    if selecteur.y != 1:
       selecteur.effacer_la_selection()
-      selecteur.get_y = selecteur.get_y - 1
+      selecteur.y = selecteur.y - 1
       selecteur.selectionner()
       sleep(0.1)
   
   elif keydown(KEY_LEFT):#←
-    if selecteur.get_x != 1:
+    if selecteur.x != 1:
       selecteur.effacer_la_selection()
-      selecteur.get_x = selecteur.get_x - 1
+      selecteur.x = selecteur.x - 1
       selecteur.selectionner()
       sleep(0.15)
   
   elif keydown(KEY_RIGHT):#→
-    if selecteur.get_x != 4:
+    if selecteur.x != 4:
       selecteur.effacer_la_selection()
-      selecteur.get_x = selecteur.get_x + 1
+      selecteur.x = selecteur.x + 1
       selecteur.selectionner()
       sleep(0.15)
 
   elif keydown(KEY_ONE):
     #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
   
-  draw_string(str(selecteur.get_x)+";"+str(selecteur.get_y),2,2)
+  draw_string(str(selecteur.x)+";"+str(selecteur.y),2,2)
