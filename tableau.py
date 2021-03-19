@@ -96,30 +96,30 @@ while True:
   #on teste les touches de navigation
   if keydown(KEY_DOWN):#↓
     if selecteur.get_y != 9:
-      effacer_la_selection()
+      selecteur.effacer_la_selection()
       selecteur.get_y = selecteur.get_y + 1
-      sel()
+      selecteur.selectionner()
       sleep(0.1)
       
   elif keydown(KEY_UP):#↑
     if selecteur.get_y != 1:
-      effacer_la_selection()
+      selecteur.effacer_la_selection()
       selecteur.get_y = selecteur.get_y - 1
-      sel()
+      selecteur.selectionner()
       sleep(0.1)
   
   elif keydown(KEY_LEFT):#←
     if selecteur.get_x != 1:
-      effacer_la_selection()
+      selecteur.effacer_la_selection()
       selecteur.get_x = selecteur.get_x - 1
-      sel()
+      selecteur.selectionner()
       sleep(0.15)
   
   elif keydown(KEY_RIGHT):#→
     if selecteur.get_x != 4:
-      effacer_la_selection()
+      selecteur.effacer_la_selection()
       selecteur.get_x = selecteur.get_x + 1
-      sel()
+      selecteur.selectionner()
       sleep(0.15)
 
   elif keydown(KEY_ONE):
