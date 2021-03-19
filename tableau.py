@@ -58,6 +58,23 @@ def y_case_vers_y_sur_l_ecran(y):
 
 
 
+#on definit la fonction qui permet de savoir ou stocker l'entrée
+ def ajout_d_un_caractere(touche):
+      if selecteur.get_x == 1:
+        colonne1[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + touche
+      
+      elif selecteur.get_x == 2:
+        colonne2[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + touche
+
+      elif selecteur.get_x == 3:
+        colonne3[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + touche
+
+      elif selecteur.get_x == 4:
+        colonne4[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + touche
+
+
+
+
 #on cree une classe "sélecteur"
 class Selecteur():
   #on definit l'initialisation
@@ -131,18 +148,50 @@ while True:
       selecteur.selectionner()
       sleep(0.15)
 
+
+
+
+
+  elif keydown(KEY_ZERO):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("0")
+  
   elif keydown(KEY_ONE):
     #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
-    if selecteur.get_x == 1:
-      colonne1[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + "1"
-
-    elif selecteur.get_x == 2:
-       colonne2[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + "1"
-
-    elif selecteur.get_x == 3:
-       colonne3[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + "1"
-
-    elif selecteur.get_x == 4:
-       colonne4[int(selecteur.get_y)] = colonne1[int(selecteur.get_y)] + "1"
+    ajout_d_un_caractere("1")
+  
+  elif keydown(KEY_TWO):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("2")
+  
+  elif keydown(KEY_THREE):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("3")
+  
+  elif keydown(KEY_FOUR):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("4")
+  
+  elif keydown(KEY_FIVE):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("5")
+  
+  elif keydown(KEY_SIX):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("6")
+  
+  elif keydown(KEY_SEVEN):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("7")
+  
+  elif keydown(KEY_EIGHT):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("8")
+  
+  elif keydown(KEY_NINE):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    ajout_d_un_caractere("9")
+  
+  
       
   draw_string(str(selecteur.x)+";"+str(selecteur.y),2,2)
