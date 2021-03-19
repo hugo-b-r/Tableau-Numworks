@@ -61,23 +61,27 @@ while True:
       sel()
       sleep(0.1)
       
-  if keydown(KEY_UP):#↑
+  elif keydown(KEY_UP):#↑
     if ysel != 23:
       white()
       ysel = ysel - 22
       sel()
       sleep(0.1)
   
-  if keydown(KEY_LEFT):#←
+  elif keydown(KEY_LEFT):#←
     if xsel != 65:
       white()
       xsel = xsel - 64
       sel()
       sleep(0.15)
   
-  if keydown(KEY_RIGHT):#→
+  elif keydown(KEY_RIGHT):#→
     if xsel != 257:
       white()
       xsel = xsel + 64
       sel()
       sleep(0.15)
+   elif keydown(KEY_ONE):
+    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+  
+  draw_string(str(xsel)+";"+str(ysel),2,2)
