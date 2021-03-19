@@ -76,6 +76,7 @@ def ajout_d_un_caractere(touche):
   print(colonne2)
   print(colonne3)
   print(colonne4)
+  sleep(0.15)
 
 
 
@@ -113,10 +114,10 @@ quadrillage()
 selecteur = Selecteur(1, 1)
 
 #on crée les listes pour chaque colonne
-colonne1 = []
-colonne2 = []
-colonne3 = []
-colonne4 = []
+colonne1 = ["","","","","","","","",""]
+colonne2 = ["","","","","","","","",""]
+colonne3 = ["","","","","","","","",""]
+colonne4 = ["","","","","","","","",""]
 
 
 
