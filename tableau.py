@@ -55,55 +55,74 @@ def y_case_vers_x_sur_l_ecran(y):
 
 
 
-def selectionner():
-  #colorise le rectangle qui est sélectionné
-  fill_rect(x_case_vers_x_sur_l_ecran(x_selecteur),y_case_vers_x_sur_l_ecran(y_selecteur),63,21,color(220,220,220))
+#on cree une classe "sélecteur"
+class Selecteur():
+  #on definit l'initialisation
+  def __init__(self, x, y, color):
+    self.x = x
+    self.y = y
+    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_x_sur_l_ecran(self.y),63,21,color(225,225,225))
+    print("selecteur créé")
 
-def effacer_la_selection():
-  #efface l'ancienne sélection
-  fill_rect(x_case_vers_x_sur_l_ecran(x_selecteur),y_case_vers_x_sur_l_ecran(y_selecteur),63,21,color(255,255,255))  
+  #on definit la recuperation des coordonnées.
+  def get_x():
+    return self.x
+  
+  def get_y():
+    return self.y
+
+  #on definit la sélection puis la déselection
+  def selectionner():
+    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_x_sur_l_ecran(self.y),63,21,color(220,220,220))
+
+  def effacer_la_selection():
+    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_x_sur_l_ecran(self.y),63,21,color(255,255,255))  
+
+
 
       
 
 #on initialise le tableau
 quadrillage()
 
-#on donne la première position du tableau
-x_selecteur = 1
-y_selecteur = 1
+#on crée le selecteur
+selecteur = Selecteur(1, 1)
+
+
 #on affiche la selection
-sel()
+
 
 while True:
   #on teste les touches de navigation
   if keydown(KEY_DOWN):#↓
-    if y_selecteur != 9:
+    if selecteur.get_y != 9:
       effacer_la_selection()
-      y_selecteur = y_selecteur + 1
+      selecteur.get_y = selecteur.get_y + 1
       sel()
       sleep(0.1)
       
   elif keydown(KEY_UP):#↑
-    if y_selecteur != 1:
+    if selecteur.get_y != 1:
       effacer_la_selection()
-      y_selecteur = y_selecteur - 1
+      selecteur.get_y = selecteur.get_y - 1
       sel()
       sleep(0.1)
   
   elif keydown(KEY_LEFT):#←
-    if x_selecteur != 1:
+    if selecteur.get_x != 1:
       effacer_la_selection()
-      x_selecteur = x_selecteur - 1
+      selecteur.get_x = selecteur.get_x - 1
       sel()
       sleep(0.15)
   
   elif keydown(KEY_RIGHT):#→
-    if x_selecteur != 4:
+    if selecteur.get_x != 4:
       effacer_la_selection()
-      x_selecteur = x_selecteur + 1
+      selecteur.get_x = selecteur.get_x + 1
       sel()
       sleep(0.15)
-   elif keydown(KEY_ONE):
+
+  elif keydown(KEY_ONE):
     #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
   
-  draw_string(str(x_selecteur)+";"+str(y_selecteur),2,2)
+  draw_string(str(selecteur.get_x)+";"+str(selecteur.get_y),2,2)
