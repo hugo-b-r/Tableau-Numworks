@@ -4,6 +4,9 @@ from kandinsky import *
 from ion import *
 from time import *
 
+
+
+
 #on dessine le cadre du tableau et les numéros de coordonnées
 def colonnes():
   #les colonnes
@@ -62,7 +65,7 @@ class Selecteur():
     self.x = x
     self.y = y
     fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(225,225,225))
-    print("selecteur créé")
+
 
   #on definit la recuperation des coordonnées.
   def get_x(self):
@@ -87,9 +90,6 @@ quadrillage()
 
 #on crée le selecteur
 selecteur = Selecteur(1, 1)
-
-
-#on affiche la selection
 
 
 while True:
