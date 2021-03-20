@@ -158,43 +158,43 @@ while True:
 
 
   elif keydown(KEY_ZERO):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 0
     ajout_d_un_caractere("0")
   
   elif keydown(KEY_ONE):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 1
     ajout_d_un_caractere("1")
   
   elif keydown(KEY_TWO):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 2
     ajout_d_un_caractere("2")
   
   elif keydown(KEY_THREE):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 3
     ajout_d_un_caractere("3")
   
   elif keydown(KEY_FOUR):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 4
     ajout_d_un_caractere("4")
   
   elif keydown(KEY_FIVE):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 5
     ajout_d_un_caractere("5")
   
   elif keydown(KEY_SIX):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 6
     ajout_d_un_caractere("6")
   
   elif keydown(KEY_SEVEN):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 7
     ajout_d_un_caractere("7")
   
   elif keydown(KEY_EIGHT):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 8
     ajout_d_un_caractere("8")
   
   elif keydown(KEY_NINE):
-    #j'aimerai ici que ca ajoute un au string de la case selectionnée à savoir de coordonnées x, y
+    #on teste la touche 9
     ajout_d_un_caractere("9")
   
   
