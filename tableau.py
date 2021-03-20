@@ -62,22 +62,30 @@ def y_case_vers_y_sur_l_ecran(y):
 def ajout_d_un_caractere(touche):
   if selecteur.x == 1:
     colonne1[int(selecteur.y) - 1] = colonne1[int(selecteur.y) - 1] + touche
-    draw_string(colonne1[int(selecteur.y)], x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
+    
+    #on écrit la nouvelle valeur
+    draw_string(str(colonne1[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
     print(colonne1)
       
   elif selecteur.x == 2:
     colonne2[int(selecteur.y) - 1] = colonne2[int(selecteur.y) - 1] + touche
-    draw_string(colonne2[int(selecteur.y)], x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
+    
+    #on écrit la nouvelle valeur
+    draw_string(str(colonne2[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
     print(colonne2)
   
   elif selecteur.x == 3:
     colonne3[int(selecteur.y) - 1] = colonne3[int(selecteur.y) - 1] + touche
-    draw_string(colonne3[int(selecteur.y)], x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
+    
+    #on écrit la nouvelle valeur
+    draw_string(str(colonne3[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
     print(colonne3)
 
   elif selecteur.x == 4:
     colonne4[int(selecteur.y) - 1] = colonne4[int(selecteur.y) - 1] + touche
-    draw_string(colonne4[int(selecteur.y)], x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
+    
+    #on écrit la nouvelle valeur
+    draw_string(str(colonne4[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
     print(colonne4)
   
   sleep(0.15)
