@@ -61,16 +61,16 @@ def y_case_vers_y_sur_l_ecran(y):
 #on definit la fonction qui permet de savoir ou stocker l'entrée
 def ajout_d_un_caractere(touche):
   if selecteur.x == 1:
-    colonne1[int(selecteur.y)] = colonne1[int(selecteur.y)] + touche
+    colonne1[int(selecteur.y) - 1] = colonne1[int(selecteur.y) - 1] + touche
       
   elif selecteur.x == 2:
-    colonne2[int(selecteur.y)] = colonne1[int(selecteur.y)] + touche
+    colonne2[int(selecteur.y) - 1] = colonne2[int(selecteur.y) - 1] + touche
   
   elif selecteur.x == 3:
-    colonne3[int(selecteur.y)] = colonne1[int(selecteur.y)] + touche
+    colonne3[int(selecteur.y) - 1] = colonne3[int(selecteur.y) - 1] + touche
 
   elif selecteur.x == 4:
-    colonne4[int(selecteur.y)] = colonne1[int(selecteur.y)] + touche
+    colonne4[int(selecteur.y) - 1] = colonne4[int(selecteur.y) - 1] + touche
   
   print(colonne1)
   print(colonne2)
