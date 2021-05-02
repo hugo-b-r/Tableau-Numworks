@@ -65,9 +65,11 @@ def ajout_d_un_caractere(touche):
     if selecteur.x == x:
       colonne1[int(selecteur.y) - 1] = colonne1[int(selecteur.y) - 1] + touche
       
-      #on écrit la nouvelle valeur
-      draw_string(str(colonne1[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
-      print(colonne1)
+      #on essaye d'écrire la nouvelle valeur
+      try:
+        draw_string(str(colonne1[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
+      except:
+        print("erreur d'affichage\réssayez.")
   
   for i in range(5):
     stockage_d_une_entree_en(i+1)
