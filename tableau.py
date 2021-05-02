@@ -58,35 +58,19 @@ def y_case_vers_y_sur_l_ecran(y):
 
 
 
-#on definit la fonction qui permet de savoir ou stocker l'entrée
+#on definit la fonction qui permet de savoir où stocker l'entrée
 def ajout_d_un_caractere(touche):
-  if selecteur.x == 1:
-    colonne1[int(selecteur.y) - 1] = colonne1[int(selecteur.y) - 1] + touche
-    
-    #on écrit la nouvelle valeur
-    draw_string(str(colonne1[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
-    print(colonne1)
-      
-  elif selecteur.x == 2:
-    colonne2[int(selecteur.y) - 1] = colonne2[int(selecteur.y) - 1] + touche
-    
-    #on écrit la nouvelle valeur
-    draw_string(str(colonne2[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
-    print(colonne2)
-  
-  elif selecteur.x == 3:
-    colonne3[int(selecteur.y) - 1] = colonne3[int(selecteur.y) - 1] + touche
-    
-    #on écrit la nouvelle valeur
-    draw_string(str(colonne3[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
-    print(colonne3)
 
-  elif selecteur.x == 4:
-    colonne4[int(selecteur.y) - 1] = colonne4[int(selecteur.y) - 1] + touche
-    
-    #on écrit la nouvelle valeur
-    draw_string(str(colonne4[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
-    print(colonne4)
+  def stockage_d_une_entree_en(x):
+    if selecteur.x == x:
+      colonne1[int(selecteur.y) - 1] = colonne1[int(selecteur.y) - 1] + touche
+      
+      #on écrit la nouvelle valeur
+      draw_string(str(colonne1[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
+      print(colonne1)
+  
+  for i in range(5):
+    stockage_d_une_entree_en(i+1)
   
   sleep(0.15)
 
