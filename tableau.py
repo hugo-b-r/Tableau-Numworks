@@ -1,10 +1,15 @@
 #importation
 from math import *
-from kandinsky import *
-from ion import *
+import kandinsky as kdk
+import ion as ion
 from time import *
 
 
+
+#on définit les couleurs ici
+BLANC = kdk.color(255,255,255)
+NOIR = kdk.color(0,0,0)
+GRIS = kdk.color(220,220,220)
 
 
 #on dessine le cadre du tableau et les numéros de coordonnées
@@ -12,35 +17,35 @@ def colonnes():
   #les colonnes
   x_colonnes = 0
   for i in range(6):
-    draw_line(x_colonnes, 0, x_colonnes, 222, color(0,0,0))
+    kdk.draw_line(x_colonnes, 0, x_colonnes, 222, NOIR)
     x_colonnes = x_colonnes + 64
 
 def lignes():
   #les lignes
   y_lignes = 0
   for i in range(11):
-    draw_line(0, y_lignes, 340, y_lignes, color(0,0,0))
+    kdk.draw_line(0, y_lignes, 340, y_lignes, NOIR)
     y_lignes = y_lignes + 22
-  draw_line(0, 221, 340, 221, color(0,0,0))
+  kdk.draw_line(0, 221, 340, 221, NOIR)
 
 def texte():
   #les numéros
   x_texte = 0
   y_texte = 1
   for i in range(9):
-    draw_string(str(y_texte),2,x_texte+25)
+    kdk.draw_string(str(y_texte),2,x_texte+25)
     x_texte = x_texte + 22
     y_texte = y_texte + 1
   x_texte = 0
   y_texte = 1
   for i in range(4):
-    draw_string(str(y_texte),x_texte+66,2)
+    kdk.draw_string(str(y_texte),x_texte+66,2)
     x_texte = x_texte + 64
     y_texte = y_texte + 1
 
 def quadrillage():
   #appelle toute les fonctions qui dessinent le quadrillage et les coordonnées
-  fill_rect(0,0,320,222,color(255,255,255))
+  kdk.fill_rect(0,0,320,222,BLANC)
   texte()
   colonnes()
   lignes()
@@ -67,7 +72,8 @@ def ajout_d_un_caractere(touche):
       
       #on essaye d'écrire la nouvelle valeur
       try:
-        draw_string(str(colonne1[int(selecteur.y)]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
+        print("ecriture")
+        kdk.draw_string(str(colonne1[selecteur.y]), x_case_vers_x_sur_l_ecran(selecteur.x), y_case_vers_y_sur_l_ecran(selecteur.y))
       except:
         print("erreur d'affichage\réssayez.")
   
@@ -84,7 +90,7 @@ class Selecteur():
   def __init__(self,x,y):
     self.x = x
     self.y = y
-    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(225,225,225))
+    kdk.fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,GRIS)
 
 
   #on definit la recuperation des coordonnées.
@@ -96,10 +102,10 @@ class Selecteur():
 
   #on definit la sélection puis la déselection
   def selectionner(self):
-    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(220,220,220))
+    kdk.fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,GRIS)
 
   def effacer_la_selection(self):
-    fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,color(255,255,255))  
+    kdk.fill_rect(x_case_vers_x_sur_l_ecran(self.x),y_case_vers_y_sur_l_ecran(self.y),63,21,BLANC)  
 
 
 
@@ -123,28 +129,28 @@ colonne4 = ["","","","","","","","",""]
 #boucle principale
 while True:
   #on teste les touches de navigation
-  if keydown(KEY_DOWN):#↓
+  if ion.keydown(ion.KEY_DOWN):#↓
     if selecteur.y != 9:
       selecteur.effacer_la_selection()
       selecteur.y = selecteur.y + 1
       selecteur.selectionner()
       sleep(0.1)
       
-  elif keydown(KEY_UP):#↑
+  elif ion.keydown(ion.KEY_UP):#↑
     if selecteur.y != 1:
       selecteur.effacer_la_selection()
       selecteur.y = selecteur.y - 1
       selecteur.selectionner()
       sleep(0.1)
   
-  elif keydown(KEY_LEFT):#←
+  elif ion.keydown(ion.KEY_LEFT):#←
     if selecteur.x != 1:
       selecteur.effacer_la_selection()
       selecteur.x = selecteur.x - 1
       selecteur.selectionner()
       sleep(0.15)
   
-  elif keydown(KEY_RIGHT):#→
+  elif ion.keydown(ion.KEY_RIGHT):#→
     if selecteur.x != 4:
       selecteur.effacer_la_selection()
       selecteur.x = selecteur.x + 1
@@ -155,46 +161,46 @@ while True:
 
 
 
-  elif keydown(KEY_ZERO):
+  elif ion.keydown(ion.KEY_ZERO):
     #on teste la touche 0
     ajout_d_un_caractere("0")
   
-  elif keydown(KEY_ONE):
+  elif ion.keydown(ion.KEY_ONE):
     #on teste la touche 1
     ajout_d_un_caractere("1")
   
-  elif keydown(KEY_TWO):
+  elif ion.keydown(ion.KEY_TWO):
     #on teste la touche 2
     ajout_d_un_caractere("2")
   
-  elif keydown(KEY_THREE):
+  elif ion.keydown(ion.KEY_THREE):
     #on teste la touche 3
     ajout_d_un_caractere("3")
   
-  elif keydown(KEY_FOUR):
+  elif ion.keydown(ion.KEY_FOUR):
     #on teste la touche 4
     ajout_d_un_caractere("4")
   
-  elif keydown(KEY_FIVE):
+  elif ion.keydown(ion.KEY_FIVE):
     #on teste la touche 5
     ajout_d_un_caractere("5")
   
-  elif keydown(KEY_SIX):
+  elif ion.keydown(ion.KEY_SIX):
     #on teste la touche 6
     ajout_d_un_caractere("6")
   
-  elif keydown(KEY_SEVEN):
+  elif ion.keydown(ion.KEY_SEVEN):
     #on teste la touche 7
     ajout_d_un_caractere("7")
   
-  elif keydown(KEY_EIGHT):
+  elif ion.keydown(ion.KEY_EIGHT):
     #on teste la touche 8
     ajout_d_un_caractere("8")
   
-  elif keydown(KEY_NINE):
+  elif ion.keydown(ion.KEY_NINE):
     #on teste la touche 9
     ajout_d_un_caractere("9")
   
   
       
-  draw_string(str(selecteur.x)+";"+str(selecteur.y),2,2)
+  kdk.draw_string(str(selecteur.x)+";"+str(selecteur.y),2,2)
